@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:CardGame"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="199*"/>
+			<RowDefinition Height="30*"/>
+			<RowDefinition Height="90*"/>
+		</Grid.RowDefinitions>
+
+	</Grid>
 </Window>
