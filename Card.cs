@@ -13,9 +13,7 @@ namespace CardGame
 		public int Suit { get { return suit; } set { suit = value; } }
 		public int Value { get { return number; } set { number = value; } }
 
-		/// <summary>
-		/// Конструирует карту с мастью от 1 до 4 и значением от 6 до 14
-		/// </summary>
+		/// <summary> Конструирует карту с мастью от 1 до 4 и значением от 6 до 14 </summary>
 		public Card(int s, int v)
 		{
 			Suit = s;
