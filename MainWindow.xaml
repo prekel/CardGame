@@ -5,13 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardGame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-	<Grid>
+        Title="MainWindow" Height="400" Width="740">
+	<Grid Margin="0,0,0,0">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="25*"/>
+			<ColumnDefinition Width="540"/>
+			<ColumnDefinition Width="25*"/>
+		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="199*"/>
+			<RowDefinition Height="200*"/>
 			<RowDefinition Height="30*"/>
-			<RowDefinition Height="90*"/>
+			<RowDefinition Height="30*"/>
+			<RowDefinition Height="30*"/>
+			<RowDefinition Height="30*"/>
 		</Grid.RowDefinitions>
+
+		<Button x:Name="button1_6" Content="♠6" HorizontalAlignment="Left" Width="60" Grid.Row="1" Margin="0,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button1_7" Content="♠7" HorizontalAlignment="Left" Width="60" Grid.Row="1" Margin="60,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button1_8" Content="♠8" HorizontalAlignment="Left" Width="60" Grid.Row="1" Margin="120,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button1_9" Content="♠9" HorizontalAlignment="Left" Width="60" Grid.Row="1" Margin="180,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button1_10" Content="♠10" HorizontalAlignment="Left" Width="60" Grid.Row="1" Margin="240,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button1_J" Content="♠J" HorizontalAlignment="Left" Width="60" Grid.Row="1" Margin="300,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button1_Q" Content="♠Q" HorizontalAlignment="Left" Width="60" Grid.Row="1" Margin="360,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button1_K" Content="♠K" HorizontalAlignment="Left" Width="60" Grid.Row="1" Margin="420,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button1_A" Content="♠A" HorizontalAlignment="Left" Width="60" Grid.Row="1" Margin="480,0,0,0" Grid.Column="1"/>
+
+		<Button x:Name="button2_6" Content="♣6" HorizontalAlignment="Left" Width="60" Grid.Row="2" Margin="0,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button2_7" Content="♣7" HorizontalAlignment="Left" Width="60" Grid.Row="2" Margin="60,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button2_8" Content="♣8" HorizontalAlignment="Left" Width="60" Grid.Row="2" Margin="120,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button2_9" Content="♣9" HorizontalAlignment="Left" Width="60" Grid.Row="2"  Margin="180,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button2_10" Content="♣10" HorizontalAlignment="Left" Width="60" Grid.Row="2" Margin="240,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button2_J" Content="♣J" HorizontalAlignment="Left" Width="60" Grid.Row="2"  Margin="300,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button2_Q" Content="♣Q" HorizontalAlignment="Left" Width="60" Grid.Row="2" Margin="360,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button2_K" Content="♣K" HorizontalAlignment="Left" Width="60" Grid.Row="2" Margin="420,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button2_A" Content="♣A" HorizontalAlignment="Left" Width="60" Grid.Row="2" Margin="480,0,0,0" Grid.Column="1"/>
+
+		<Button x:Name="button3_6" Content="♥6" HorizontalAlignment="Left" Width="60" Grid.Row="3" Margin="0,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button3_7" Content="♥7" HorizontalAlignment="Left" Width="60" Grid.Row="3" Margin="60,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button3_8" Content="♥8" HorizontalAlignment="Left" Width="60" Grid.Row="3" Margin="120,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button3_9" Content="♥9" HorizontalAlignment="Left" Width="60" Grid.Row="3"  Margin="180,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button3_10" Content="♥10" HorizontalAlignment="Left" Width="60" Grid.Row="3" Margin="240,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button3_J" Content="♥J" HorizontalAlignment="Left" Width="60" Grid.Row="3"  Margin="300,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button3_Q" Content="♥Q" HorizontalAlignment="Left" Width="60" Grid.Row="3" Margin="360,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button3_K" Content="♥K" HorizontalAlignment="Left" Width="60" Grid.Row="3" Margin="420,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button3_A" Content="♥A" HorizontalAlignment="Left" Width="60" Grid.Row="3" Margin="480,0,0,0" Grid.Column="1"/>
+
+		<Button x:Name="button4_6" Content="♦6" HorizontalAlignment="Left" Width="60" Grid.Row="4" Margin="0,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button4_7" Content="♦7" HorizontalAlignment="Left" Width="60" Grid.Row="4" Margin="60,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button4_8" Content="♦8" HorizontalAlignment="Left" Width="60" Grid.Row="4" Margin="120,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button4_9" Content="♦9" HorizontalAlignment="Left" Width="60" Grid.Row="4"  Margin="180,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button4_10" Content="♦10" HorizontalAlignment="Left" Width="60" Grid.Row="4" Margin="240,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button4_J" Content="♦J" HorizontalAlignment="Left" Width="60" Grid.Row="4"  Margin="300,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button4_Q" Content="♦Q" HorizontalAlignment="Left" Width="60" Grid.Row="4" Margin="360,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button4_K" Content="♦K" HorizontalAlignment="Left" Width="60" Grid.Row="4" Margin="420,0,0,0" Grid.Column="1"/>
+		<Button x:Name="button4_A" Content="♦A" HorizontalAlignment="Left" Width="60" Grid.Row="4" Margin="480,0,0,0" Grid.Column="1"/>
+		<Label x:Name="label" Content="Счёт:&#xA;Правильно:&#xD;&#xA;Неправильно:&#xA;Не угадано:&#xA;Время:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="314,50,0,0" Height="105" Width="88"/>
+		<Button x:Name="button" Content="Старт" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="49,45,0,0"/>
+		<Label x:Name="textBox" HorizontalAlignment="Left" Height="175" Content="1&#xD;&#xA;2&#xD;&#xA;3&#xD;&#xA;4&#xD;&#xA;5&#xD;&#xA;6&#xD;&#xA;7&#xD;&#xA;8&#xD;&#xA;9&#xD;&#xA;10" VerticalAlignment="Top" Width="45" Grid.Column="1" Margin="174,30,0,0" BorderBrush="#FFEC1F1F" Background="#FFE4FFF2"/>
+
+		<TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Grid.Column="1" Margin="420,55,0,0"/>
+		<TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Grid.Column="1" Margin="420,71,0,0"/>
+		<TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Grid.Column="1" Margin="420,87,0,0"/>
+		<TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Grid.Column="1" Margin="420,103,0,0"/>
+		<TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Grid.Column="1" Margin="420,120,0,0"/>
 
 	</Grid>
 </Window>
