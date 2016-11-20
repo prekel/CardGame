@@ -20,6 +20,11 @@ namespace CardGame
 			Value = v;
 		}
 
+		public Card()
+		{
+
+		}
+
 		public Card(string s)
 		{
 			if (s[0] == '♠')
@@ -60,8 +65,23 @@ namespace CardGame
 				a[i] = new Card(rand.Next(1, 5), rand.Next(6, 15));
 			}
 			return a;
-			
 		}
+
+		public static Card Null()
+		{
+			return new Card();
+		}
+
+		public static Card[] CardNullArray(int n)
+		{
+			var c = new Card[n];
+			for (var i = 0; i < n; i++)
+			{
+				c[i] = new Card();
+			}
+			return c;
+		}
+
 
 		public override string ToString()
 		{

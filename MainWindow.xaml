@@ -59,7 +59,7 @@
 		<Button x:Name="button4_Q" Content="♦Q" HorizontalAlignment="Left" Width="60" Grid.Row="4" Margin="360,0,0,0" Grid.Column="1"/>
 		<Button x:Name="button4_K" Content="♦K" HorizontalAlignment="Left" Width="60" Grid.Row="4" Margin="420,0,0,0" Grid.Column="1"/>
 		<Button x:Name="button4_A" Content="♦A" HorizontalAlignment="Left" Width="60" Grid.Row="4" Margin="480,0,0,0" Grid.Column="1"/>
-		<Label x:Name="label" Content="Счёт:&#xA;Правильно:&#xD;&#xA;Неправильно:&#xA;Не угадано:&#xA;Время:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="314,50,0,0" Height="105" Width="88"/>
+		<Label x:Name="label" Content="Счёт:&#xA;Правильно:&#xD;&#xA;Неправильно:&#xA;Осталось:&#xA;Время:" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="314,50,0,0" Height="105" Width="88"/>
 		<Button x:Name="start" Content="Старт" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="49,45,0,0"/>
 
 		<TextBlock x:Name="cardBox" Height="45"  Text="1 2 3 4 5 6 7 8 9" VerticalAlignment="Top" Grid.Column="1" Margin="0,160,0,0" Background="#FFE4FFF2" FontSize="30" LineHeight="9" TextAlignment="Center" TextDecorations="{x:Null}"/>
