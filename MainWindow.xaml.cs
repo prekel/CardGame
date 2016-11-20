@@ -21,17 +21,19 @@ namespace CardGame
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		int Count, starttime = 10;
+		int Count, starttime = 10, scoreCount = 0, leftCount = 10, correctCount = 0, wrongCount = 0;
 		private static Timer timer;
+		Card[] a;
 
 		public MainWindow()
 		{
 			InitializeComponent();
-			Main.Init();
+			//Main.Init();
 
 			start.Click += StartClick;
 
 			timer = new Timer(1000);
+			a = Card.CardArray(leftCount);
 
 			//timer.Elapsed += TimerTenSec;
 			////timer.Interval = 5000;
@@ -92,6 +94,8 @@ namespace CardGame
 			//Main.Init();
 			//var timebegin = DateTime.Now;
 
+			start.IsEnabled = false;
+
 			//timer = new Timer(1000);
 			timer.Stop();
 			timer.Elapsed += TimerOneSec;
@@ -101,7 +105,7 @@ namespace CardGame
 			timer.Start();
 			timeBlock.Text = starttime.ToString();
 
-			var a = Card.CardArray(10);
+
 			cardBox.Text = "";
 			foreach (var i in a)
 			{
@@ -121,64 +125,66 @@ namespace CardGame
 					Count = 0;
 					var timer = (Timer)sender;
 					timer.Stop();
+
 				}
 			};
 			Dispatcher.Invoke(action);
 		}
 
-		//public void TimerOneSec(object sender, System.Timers.ElapsedEventArgs e)
-		//{
-		//	Action action = () =>
-		//	{
-		//		//var timer = (Timer)sender;
-		//		//timeBlock.Text = (++Count).ToString();
-		//		//timeBlock.Text = "L";
-		//		//MainWindow.cardBox.Text = "";
-		//		//timer.Stop();
-		//		Count++;
-		//		timeBlock.Text = Count.ToString();
-		//	};
-		//	Dispatcher.Invoke(action);
-		//}
+		public void CardClick(int n, int v)
+		{
+			var c = new Card(n, v);
+			foreach (var i in a)
+			{
+				if (c.ToString() == i.ToString())
+				{
+					correctCount++;
+					correctBlock.Text = correctCount.ToString();
+					return;
+				}
+			}
+			wrongCount++;
+			wrongBlock.Text = wrongCount.ToString();
+		}
 
-		public void button1_6Click(object sender, RoutedEventArgs e) => Main.CardClick1(1, 6);
-		public void button1_7Click(object sender, RoutedEventArgs e) => Main.CardClick1(1, 7);
-		public void button1_8Click(object sender, RoutedEventArgs e) => Main.CardClick1(1, 8);
-		public void button1_9Click(object sender, RoutedEventArgs e) => Main.CardClick1(1, 9);
-		public void button1_10Click(object sender, RoutedEventArgs e) => Main.CardClick1(1, 10);
-		public void button1_JClick(object sender, RoutedEventArgs e) => Main.CardClick1(1, 11);
-		public void button1_QClick(object sender, RoutedEventArgs e) => Main.CardClick1(1, 12);
-		public void button1_KClick(object sender, RoutedEventArgs e) => Main.CardClick1(1, 13);
-		public void button1_AClick(object sender, RoutedEventArgs e) => Main.CardClick1(1, 14);
+		public void button1_6Click(object sender, RoutedEventArgs e) => CardClick(1, 6);
+		public void button1_7Click(object sender, RoutedEventArgs e) => CardClick(1, 7);
+		public void button1_8Click(object sender, RoutedEventArgs e) => CardClick(1, 8);
+		public void button1_9Click(object sender, RoutedEventArgs e) => CardClick(1, 9);
+		public void button1_10Click(object sender, RoutedEventArgs e) => CardClick(1, 10);
+		public void button1_JClick(object sender, RoutedEventArgs e) => CardClick(1, 11);
+		public void button1_QClick(object sender, RoutedEventArgs e) => CardClick(1, 12);
+		public void button1_KClick(object sender, RoutedEventArgs e) => CardClick(1, 13);
+		public void button1_AClick(object sender, RoutedEventArgs e) => CardClick(1, 14);
 
-		public void button2_6Click(object sender, RoutedEventArgs e) => Main.CardClick1(2, 6);
-		public void button2_7Click(object sender, RoutedEventArgs e) => Main.CardClick1(2, 7);
-		public void button2_8Click(object sender, RoutedEventArgs e) => Main.CardClick1(2, 8);
-		public void button2_9Click(object sender, RoutedEventArgs e) => Main.CardClick1(2, 9);
-		public void button2_10Click(object sender, RoutedEventArgs e) => Main.CardClick1(2, 10);
-		public void button2_JClick(object sender, RoutedEventArgs e) => Main.CardClick1(2, 11);
-		public void button2_QClick(object sender, RoutedEventArgs e) => Main.CardClick1(2, 12);
-		public void button2_KClick(object sender, RoutedEventArgs e) => Main.CardClick1(2, 13);
-		public void button2_AClick(object sender, RoutedEventArgs e) => Main.CardClick1(2, 14);
+		public void button2_6Click(object sender, RoutedEventArgs e) => CardClick(2, 6);
+		public void button2_7Click(object sender, RoutedEventArgs e) => CardClick(2, 7);
+		public void button2_8Click(object sender, RoutedEventArgs e) => CardClick(2, 8);
+		public void button2_9Click(object sender, RoutedEventArgs e) => CardClick(2, 9);
+		public void button2_10Click(object sender, RoutedEventArgs e) => CardClick(2, 10);
+		public void button2_JClick(object sender, RoutedEventArgs e) => CardClick(2, 11);
+		public void button2_QClick(object sender, RoutedEventArgs e) => CardClick(2, 12);
+		public void button2_KClick(object sender, RoutedEventArgs e) => CardClick(2, 13);
+		public void button2_AClick(object sender, RoutedEventArgs e) => CardClick(2, 14);
 
-		public void button3_6Click(object sender, RoutedEventArgs e) => Main.CardClick1(3, 6);
-		public void button3_7Click(object sender, RoutedEventArgs e) => Main.CardClick1(3, 7);
-		public void button3_8Click(object sender, RoutedEventArgs e) => Main.CardClick1(3, 8);
-		public void button3_9Click(object sender, RoutedEventArgs e) => Main.CardClick1(3, 9);
-		public void button3_10Click(object sender, RoutedEventArgs e) => Main.CardClick1(3, 10);
-		public void button3_JClick(object sender, RoutedEventArgs e) => Main.CardClick1(3, 11);
-		public void button3_QClick(object sender, RoutedEventArgs e) => Main.CardClick1(3, 12);
-		public void button3_KClick(object sender, RoutedEventArgs e) => Main.CardClick1(3, 13);
-		public void button3_AClick(object sender, RoutedEventArgs e) => Main.CardClick1(3, 14);
+		public void button3_6Click(object sender, RoutedEventArgs e) => CardClick(3, 6);
+		public void button3_7Click(object sender, RoutedEventArgs e) => CardClick(3, 7);
+		public void button3_8Click(object sender, RoutedEventArgs e) => CardClick(3, 8);
+		public void button3_9Click(object sender, RoutedEventArgs e) => CardClick(3, 9);
+		public void button3_10Click(object sender, RoutedEventArgs e) => CardClick(3, 10);
+		public void button3_JClick(object sender, RoutedEventArgs e) => CardClick(3, 11);
+		public void button3_QClick(object sender, RoutedEventArgs e) => CardClick(3, 12);
+		public void button3_KClick(object sender, RoutedEventArgs e) => CardClick(3, 13);
+		public void button3_AClick(object sender, RoutedEventArgs e) => CardClick(3, 14);
 
-		public void button4_6Click(object sender, RoutedEventArgs e) => Main.CardClick1(4, 6);
-		public void button4_7Click(object sender, RoutedEventArgs e) => Main.CardClick1(4, 7);
-		public void button4_8Click(object sender, RoutedEventArgs e) => Main.CardClick1(4, 8);
-		public void button4_9Click(object sender, RoutedEventArgs e) => Main.CardClick1(4, 9);
-		public void button4_10Click(object sender, RoutedEventArgs e) => Main.CardClick1(4, 10);
-		public void button4_JClick(object sender, RoutedEventArgs e) => Main.CardClick1(4, 11);
-		public void button4_QClick(object sender, RoutedEventArgs e) => Main.CardClick1(4, 12);
-		public void button4_KClick(object sender, RoutedEventArgs e) => Main.CardClick1(4, 13);
-		public void button4_AClick(object sender, RoutedEventArgs e) => Main.CardClick1(4, 14);
+		public void button4_6Click(object sender, RoutedEventArgs e) => CardClick(4, 6);
+		public void button4_7Click(object sender, RoutedEventArgs e) => CardClick(4, 7);
+		public void button4_8Click(object sender, RoutedEventArgs e) => CardClick(4, 8);
+		public void button4_9Click(object sender, RoutedEventArgs e) => CardClick(4, 9);
+		public void button4_10Click(object sender, RoutedEventArgs e) => CardClick(4, 10);
+		public void button4_JClick(object sender, RoutedEventArgs e) => CardClick(4, 11);
+		public void button4_QClick(object sender, RoutedEventArgs e) => CardClick(4, 12);
+		public void button4_KClick(object sender, RoutedEventArgs e) => CardClick(4, 13);
+		public void button4_AClick(object sender, RoutedEventArgs e) => CardClick(4, 14);
 	}
 }
