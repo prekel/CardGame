@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Timers;
 
 namespace CardGame
 {
@@ -20,6 +21,9 @@ namespace CardGame
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		int Count, starttime = 10;
+		private static Timer timer;
+
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -27,6 +31,12 @@ namespace CardGame
 
 			start.Click += StartClick;
 
+			timer = new Timer(1000);
+
+			//timer.Elapsed += TimerTenSec;
+			////timer.Interval = 5000;
+			//timer.AutoReset = true;
+			//timer.Enabled = true;
 
 			//button1_6.Click -= Azaza;
 			//button1_6.Click += new RoutedEventHandler(button1_6Click);
@@ -80,14 +90,56 @@ namespace CardGame
 		public void StartClick(object sender, RoutedEventArgs e)
 		{
 			//Main.Init();
-			var timebegin = DateTime.Now;
+			//var timebegin = DateTime.Now;
+
+			//timer = new Timer(1000);
+			timer.Stop();
+			timer.Elapsed += TimerOneSec;
+			timer.Interval = 1000;
+			timer.AutoReset = true;
+			timer.Enabled = true;
+			timer.Start();
+			timeBlock.Text = starttime.ToString();
+
 			var a = Card.CardArray(10);
-			cardBox.Content = "";
+			cardBox.Text = "";
 			foreach (var i in a)
 			{
-				cardBox.Content += i.ToString() + '\n';
+				cardBox.Text += i.ToString() + ' ';
 			}
 		}
+
+		public void TimerOneSec(object sender, ElapsedEventArgs e)
+		{
+			Action action = () =>
+			{
+				Count++;
+				timeBlock.Text = (starttime - Count).ToString();
+				if (Count == starttime)
+				{
+					cardBox.Text = "";
+					Count = 0;
+					var timer = (Timer)sender;
+					timer.Stop();
+				}
+			};
+			Dispatcher.Invoke(action);
+		}
+
+		//public void TimerOneSec(object sender, System.Timers.ElapsedEventArgs e)
+		//{
+		//	Action action = () =>
+		//	{
+		//		//var timer = (Timer)sender;
+		//		//timeBlock.Text = (++Count).ToString();
+		//		//timeBlock.Text = "L";
+		//		//MainWindow.cardBox.Text = "";
+		//		//timer.Stop();
+		//		Count++;
+		//		timeBlock.Text = Count.ToString();
+		//	};
+		//	Dispatcher.Invoke(action);
+		//}
 
 		public void button1_6Click(object sender, RoutedEventArgs e) => Main.CardClick1(1, 6);
 		public void button1_7Click(object sender, RoutedEventArgs e) => Main.CardClick1(1, 7);

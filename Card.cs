@@ -55,11 +55,12 @@ namespace CardGame
 			var rand = new Random();
 			var a = new Card[n];
 			//Card a = new Card(1, 6);
-			for (int i = 0; i < n; i++)
+			for (var i = 0; i < n; i++)
 			{
 				a[i] = new Card(rand.Next(1, 5), rand.Next(6, 15));
 			}
 			return a;
+			
 		}
 
 		public override string ToString()
